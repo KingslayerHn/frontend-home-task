@@ -39,7 +39,16 @@ const Dashboard = () => {
             {`Repository:  ${repository?.name}`}
           </Typography>
 
-          <Grid container rowGap={2} direction="column">
+          <Grid
+            container
+            rowGap={2}
+            wrap="nowrap"
+            direction="column"
+            sx={{
+              height: '80vh',
+              overflow: 'scroll',
+            }}
+          >
             {commits?.map((commit) => (
               <Grid
                 key={commit.sha}
@@ -51,7 +60,7 @@ const Dashboard = () => {
               >
                 <Typography color="#fff">{commit.commit.message}</Typography>
                 <Typography color="#ADBAC7" fontSize={11}>
-                  {commit.sha}
+                  {`sha: ${commit.sha}`}
                 </Typography>
                 <Typography color="#819776" fontSize={11}>
                   {moment(commit.commit.author.date).format('LLLL')}
