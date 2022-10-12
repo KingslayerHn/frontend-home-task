@@ -31,7 +31,7 @@ const Signup = ({ isLogin, handleIsLoginChange }: SignUpInterface) => {
           }}
           onClick={handleIsLoginChange}
         >
-          {!isLogin ? 'Sign in' : 'Sign up'}
+          {isLogin ? 'Sign up' : 'Sign in'}
         </Button>
       </Grid>
     </Grid>

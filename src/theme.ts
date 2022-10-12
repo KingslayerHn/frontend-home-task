@@ -80,7 +80,7 @@ const Palette = {
     },
   },
   text: {
-    primary: '#9145E2',
+    primary: '#04193E',
     secondary: '#00FFFF',
     dark: '#293036',
     disabled: '#B4B9BE',
@@ -248,7 +248,7 @@ const theme = createTheme({
   breakpoints: breakpoints,
 
   typography: {
-    fontFamily: 'Raleway',
+    fontFamily: 'Poppins',
     h1: {
       fontSize: `${ThemeFonts.screenxl.h1}px`,
       fontStyle: 'normal',
@@ -619,71 +619,13 @@ const theme = createTheme({
       },
     },
 
-    MuiButtonBase: {
-      defaultProps: {
-        disableRipple: true,
-      },
-    },
-    MuiCollapse: {
-      defaultProps: {
-        sx: { width: '100%' },
-      },
-    },
-    MuiAlert: {
-      defaultProps: {
-        variant: 'filled',
-        sx: { fontSize: '16px' },
-      },
-    },
-    MuiPopover: {
-      styleOverrides: {
-        paper: {
-          borderRadius: '8px',
-        },
-      },
-    },
-    MuiTooltip: {
-      styleOverrides: {
-        tooltip: {
-          color: Palette.primary.main,
-          fontSize: 14,
-          backgroundColor: '#fff',
-          maxWidth: '220px',
-          lineHeight: '1.2',
-          boxShadow: '0px 0px 0px 1px rgba(0,0,0,0.1)',
-          '& span::before': {
-            color: '#fff',
-            boxShadow: '0px 0px 1px rgba(0,0,0,0.1)',
-          },
-        },
-      },
-    },
-    MuiCheckbox: {
-      styleOverrides: {
-        root: {
-          color: Palette.primary.main,
-        },
-      },
-    },
-    MuiFormLabel: {
-      defaultProps: {
-        sx: {
-          fontWeight: 600,
-        },
-      },
-    },
     MuiOutlinedInput: {
       styleOverrides: {
         root: {
           // fontFamily: "Raleway",
-          borderRadius: '14px',
-          '& fieldset': {
-            border: `2px solid ${Palette.grey[400]}`,
-            transition: 'border 0.2s linear',
-          },
-          '&:hover fieldset': {
-            borderColor: `${Palette.primary.main} !important`,
-          },
+          borderRadius: '10px',
+          height: 50,
+          fontWeight: 500,
         },
       },
     },
