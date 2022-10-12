@@ -1,14 +1,15 @@
 import { Grid, Container, Typography, Avatar, Box } from '@mui/material';
+import moment from 'moment';
 import GroupAddIcon from '@mui/icons-material/GroupAdd';
 
 import useDashboardState from './state/useDashboardState';
 
 const Dashboard = () => {
-  const { user } = useDashboardState();
+  const { user, repository, commits } = useDashboardState();
   return (
     <Grid width={'100%'} height="100vh" bgcolor={'#22272E'} pt={10}>
       <Container sx={{ display: 'flex', flexDirection: 'row' }}>
-        <Grid display="flex" direction="column">
+        <Grid display="flex" direction="column" container flex={0}>
           <Avatar
             src={user?.avatar_url}
             sx={{ width: 250, height: 250, marginBottom: 2 }}
@@ -33,7 +34,32 @@ const Dashboard = () => {
             </Typography>
           </Box>
         </Grid>
-        <Grid flex={1}>logs</Grid>
+        <Grid flex={1} ml={10}>
+          <Typography color={'#ADBAC7'} variant="h2" fontWeight={600} mb={2}>
+            {`Repository:  ${repository?.name}`}
+          </Typography>
+
+          <Grid container rowGap={2} direction="column">
+            {commits?.map((commit) => (
+              <Grid
+                key={commit.sha}
+                sx={{
+                  border: '1px solid #5A6A8F',
+                  padding: 2,
+                  borderRadius: 2,
+                }}
+              >
+                <Typography color="#fff">{commit.commit.message}</Typography>
+                <Typography color="#ADBAC7" fontSize={11}>
+                  {commit.sha}
+                </Typography>
+                <Typography color="#819776" fontSize={11}>
+                  {moment(commit.commit.author.date).format('LLLL')}
+                </Typography>
+              </Grid>
+            ))}
+          </Grid>
+        </Grid>
       </Container>
     </Grid>
   );
