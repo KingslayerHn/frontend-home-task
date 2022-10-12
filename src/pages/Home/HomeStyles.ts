@@ -1,4 +1,4 @@
-import { createNamedStyles } from '../create_named_styles';
+import { createNamedStyles } from '../../create_named_styles';
 
 export const HomeStyles = createNamedStyles({
   bg: {

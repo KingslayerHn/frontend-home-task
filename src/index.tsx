@@ -1,8 +1,8 @@
 import ReactDOM from 'react-dom/client';
-import Home from './Home/Home';
 import reportWebVitals from './reportWebVitals';
 import { ThemeProvider, CssBaseline } from '@mui/material';
 import theme from './theme';
+import Router from './router/Routes';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -11,7 +11,7 @@ root.render(
   <ThemeProvider theme={theme}>
     <>
       <CssBaseline />
-      <Home />
+      <Router />
     </>
   </ThemeProvider>
 );
