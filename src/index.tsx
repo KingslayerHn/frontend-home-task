@@ -1,4 +1,3 @@
-import React from 'react';
 import ReactDOM from 'react-dom/client';
 import Home from './Home/Home';
 import reportWebVitals from './reportWebVitals';
@@ -9,14 +8,12 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
-  <React.StrictMode>
-    <ThemeProvider theme={theme}>
-      <>
-        <CssBaseline />
-        <Home />
-      </>
-    </ThemeProvider>
-  </React.StrictMode>
+  <ThemeProvider theme={theme}>
+    <>
+      <CssBaseline />
+      <Home />
+    </>
+  </ThemeProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function

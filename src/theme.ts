@@ -2,11 +2,11 @@ import { createTheme } from '@mui/material';
 
 const Palette = {
   primary: {
-    dark2: '#640AC5',
-    dark: '#640AC5',
-    main: '#7A22D8',
-    light: '#A869EA',
-    light2: '#C397F3',
+    dark2: '#000610',
+    dark: '#010F26',
+    main: '#04193E',
+    light: '#0A2656',
+    light2: '#1C3A6D',
     components: {
       disabled: 'rgb(145, 69, 226,0.7)',
       outlined: 'rgb(145, 69, 226,0.3)',
@@ -248,7 +248,7 @@ const theme = createTheme({
   breakpoints: breakpoints,
 
   typography: {
-    fontFamily: 'Lato',
+    fontFamily: 'Raleway',
     h1: {
       fontSize: `${ThemeFonts.screenxl.h1}px`,
       fontStyle: 'normal',
