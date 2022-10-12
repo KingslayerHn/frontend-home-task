@@ -1,6 +1,7 @@
 import { Grid, Typography, Button, Box } from '@mui/material';
 import Github from '../../assets/Github.png';
-const Signup = () => {
+import { SignUpInterface } from './SignUpInterface';
+const Signup = ({ isLogin, handleIsLoginChange }: SignUpInterface) => {
   return (
     <Grid display={'flex'} direction="column" flex={1} height={'100%'}>
       <Grid flex={1}>
@@ -19,7 +20,7 @@ const Signup = () => {
       </Grid>
       <Grid>
         <Typography color={'#fff'} fontWeight={500} fontSize={14} mb={1}>
-          Don't have acount yet?
+          {isLogin ? " Don't have acount yet?" : 'Do you have account?'}
         </Typography>
         <Button
           sx={{
@@ -28,8 +29,9 @@ const Signup = () => {
             borderRadius: 20,
             width: '100%',
           }}
+          onClick={handleIsLoginChange}
         >
-          Sign up
+          {!isLogin ? 'Sign in' : 'Sign up'}
         </Button>
       </Grid>
     </Grid>
